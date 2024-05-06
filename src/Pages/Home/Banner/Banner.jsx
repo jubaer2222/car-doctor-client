@@ -1,0 +1,59 @@
+import { useEffect } from "react";
+import img1 from "../../../assets/images/banner/1.jpg"
+import img2 from "../../../assets/images/banner/2.jpg"
+import img3 from "../../../assets/images/banner/3.jpg"
+import img4 from "../../../assets/images/banner/4.jpg"
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+const Banner = () => {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
+
+  return (
+    // <div data-aos="fade-right"></div>
+    <div className="carousel w-full">
+      <div id="slide1" className="carousel-item relative w-full">
+        <img src={img1} className="w-full " />
+        <div className="absolute flex justify-end gap-6 transform -translate-y-1/2 left-5 right-5 bottom-0">
+          <a href="#slide4" className="btn btn-circle">❮</a>
+          <a href="#slide2" className="btn btn-circle">❯</a>
+        </div>
+        <div className="absolute flex justify-center gap-6  left-5 right-5 ">
+          <div
+            data-aos="fade-right" //Here you can use any of the AOS animations
+          >
+            <h2>MyFunctionalComponent</h2>
+          </div>
+        </div>
+      </div>
+      <div id="slide2" className="carousel-item relative w-full">
+        <img src={img2} className="w-full" />
+        <div className="absolute flex justify-end gap-6 transform -translate-y-1/2 left-5 right-5 bottom-0">
+          <a href="#slide1" className="btn btn-circle">❮</a>
+          <a href="#slide3" className="btn btn-circle">❯</a>
+        </div>
+      </div>
+      <div id="slide3" className="carousel-item relative w-full">
+        <img src={img3} className="w-full" />
+        <div className="absolute flex justify-end gap-6 transform -translate-y-1/2 left-5 right-5 bottom-0">
+          <a href="#slide2" className="btn btn-circle">❮</a>
+          <a href="#slide4" className="btn btn-circle">❯</a>
+        </div>
+      </div>
+      <div id="slide4" className="carousel-item relative w-full">
+        <img src={img4} className="w-full" />
+        <div className="absolute flex justify-end gap-6 transform -translate-y-1/2 left-5 right-5 bottom-0">
+          <a href="#slide3" className="btn btn-circle">❮</a>
+          <a href="#slide1" className="btn btn-circle">❯</a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Banner;
